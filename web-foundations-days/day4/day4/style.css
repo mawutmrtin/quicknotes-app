@@ -1,90 +1,83 @@
-:root {
-  --bg-color: #ffffff;
-  --text-color: #222222;
-  --primary-color: #3498db;
-  --border-color: #cccccc;
-  --button-bg: #3498db;
-  --button-text: #ffffff;
+:root{
+    background-color: white;
+    --text-color: #222222;
+    --primary-color: #3498db;
+    --border-color:#cccccc;
+    --button-color: #3498db;
+    --button-text: #ffffff;
 }
 
-
-body.dark {
-  --bg-color: #222222;
-  --text-color: #ffffff;
-  --primary-color: #5dade2;
-  --border-color: #555555;
-  --button-bg: #5dade2;
-  --button-text: #222222;
+body.dark{
+    background-color: dark;
+    color: white;
+    border-color: #555555;
+    --primary-color: #5dade22;
+    --button-background: #5dade2;
+    --button-text: #222243;
 }
 
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 30px;
-  transition: background-color 0.3s, color 0.3s;
+body{
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    padding: 25px;
+    transition: background-color 0.4s, color 0.3s;
 }
 
-
-main {
-  max-width: 700px;
-  margin: 0 auto;
+main{
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-h1 {
-  color: var(--primary-color);
+h1{
+    color: var(--primary-color);
 }
 
+label{
+    display: block;
+    margin-bottom: 9px;
+    font-weight: bold;
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
 }
 
-
-textarea {
-  width: 100%;
-  min-height: 200px;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: 16px;
-  resize: vertical;
+textarea{
+    width: 100%;
+    min-height: 180px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px sold var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 14px;
+    resize: vertical;
 }
 
-
-p {
-  margin: 10px 0;
+p{
+    margin: 12px 0;
 }
 
-.warning {
-  color: orange;
+.warning{
+    color: var(--text-color);
 }
 
-
-.over {
-  color: red;
-  font-weight: bold;
+.over{
+    color: red;
+    font-weight: bold;
 }
 
-
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 10px 16px;
-  margin-right: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
+button{
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 18px;
+    margin-right: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 10px;
 }
 
-button:hover {
-  opacity: 0.85;
+button:hover{
+    opacity: 0.96;
 }
