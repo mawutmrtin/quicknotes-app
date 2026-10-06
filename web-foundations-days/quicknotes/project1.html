@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicknotes-app</title>
+    <link rel="stylesheet" href="project1/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>QuickNotes1</h1>   
+        <p>Capture Ideas Before the Disappear</p>  
+    </header>
+    <main>
+        <section>
+            <h2>Add a Note</h2>
+            <form id="note-form">
+             <label for="note-input">New Note</label>
+            <input type="text" id="note-input" placeholder="Type a note">
+            <label for="note-category">Category</label>
+            <select id="note-category">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="study">Study</option>
+
+                
+            </select>
+            <button type="submit">Add Note</button>
+            </form>
+            <p id="error-message"></p>
+        </section>
+
+        <section>
+            <h2>Your Notes</h2>
+            <label for="search-input">Search Notes</label>
+            <input type="serch" id="search-input" placeholder="search-your-notes">
+            <p id="note-count">You have 0 notes</p>
+            <ul id="notes-list"></ul>
+        </section>
+        
+    </main>
+    <footer>
+    <p>&copy; 2026 QuickNotes. Built During Web Foundations.</p>
+    </footer>
+    
+</body>
+</html>
