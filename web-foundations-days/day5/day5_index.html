@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Directory</title>
+    <link rel="stylesheet" href="day5_style.css" />
+    <script src="day5_users.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>User Directory</h1>
+
+      <div class="controls">
+        <button id="load-users">Load Users</button>
+
+        <div class="filter-group">
+          <label for="filter-input">Filter users</label>
+          <input
+            id="filter-input"
+            type="text"
+            placeholder="Search by name..."
+          />
+        </div>
+      </div>
+
+      <p id="status"></p>
+
+      <ul id="users-list"></ul>
+    </main>
+  </body>
+</html>
