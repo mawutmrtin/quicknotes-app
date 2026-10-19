@@ -147,7 +147,7 @@ The database should store metadata such as the photo ID, owner ID, caption, uplo
         v                v                 
           
    App Server     App Server        
-   Instance 1   Instance 2          
+   Instance 1     Instance 2          
         
         |                |                
                    
@@ -155,7 +155,7 @@ The database should store metadata such as the photo ID, owner ID, caption, uplo
         v                  v               
       
    Redis Cache     Primary DB        
-  Feed/cache      Users, metadata    
+   Feed/cache      Users, metadata    
  
                              |             
                              | Replication 
@@ -213,16 +213,25 @@ The diagram shows the main components and the thumbnail-processing path. The CDN
 ## 7. Step-by-Step Photo Upload Flow
 
 1. **User selects a photo:** The user chooses a photo and submits it through the SnapShare application.
+
 2. **Request reaches the load balancer:** The load balancer forwards the upload request to a healthy application server.
+
 3. **Authentication and validation:** The application server checks the user's identity, upload permissions, file type, file size, and other security requirements.
 4. **Store the original photo:** The application uploads the original image to object storage under a unique object key.
+
 5. **Save photo metadata:** The application writes the photo ID, owner ID, caption, upload time, object key, and processing status to the primary database.
 6. **Queue a thumbnail job:** The application publishes a message containing the photo ID and object-storage key to the message queue.
+
 7. **Confirm the upload:** Once the original file and required metadata have been saved and the job has been safely queued, the application returns a successful response to the user. The thumbnail can be generated asynchronously.
+
 8. **Worker processes the job:** A thumbnail worker retrieves the message and downloads or reads the original image from object storage.
+
 9. **Generate the thumbnail:** The worker resizes the image and encodes a thumbnail targeting approximately 50 KB, depending on image content and compression.
+
 10. **Store the thumbnail:** The worker saves the thumbnail in object storage using a separate key and updates the photo metadata to indicate that thumbnail processing is complete.
+
 11. **Deliver the photo:** When users view the feed, the application returns photo metadata and image references; the CDN delivers the original photo or thumbnail as appropriate.
+
 12. **Handle failures safely:** If thumbnail processing fails, the job can be retried, and failed jobs can be moved to a dead-letter queue for investigation without losing the original photo.
 
 ## 8. Trade-Offs
