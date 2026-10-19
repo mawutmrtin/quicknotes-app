@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes REST API client for managing notes.">
+    <title>QuickNotes - Notes Manager</title>
+
+    <link rel="stylesheet" href="day7_style.css">
+    <script src="api.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>QuickNotes</h1>
+            <p>Capture ideas before they disappear.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Create a Note</h2>
+
+            <form id="note-form">
+                <div class="form-group">
+                    <label for="title-input">Note Title</label>
+                    <input
+                        type="text"
+                        id="title-input"
+                        name="title"
+                        placeholder="Enter your note title"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="body-input">Note Content</label>
+                    <textarea
+                        id="body-input"
+                        name="body"
+                        placeholder="Write your note here..."
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    Create Note
+                </button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Your Notes</h2>
+
+                <button type="button" id="load-btn">
+                    Load Notes
+                </button>
+            </div>
+
+            <p id="status" class="status info" role="status" aria-live="polite">
+                Select "Load Notes" to retrieve your notes.
+            </p>
+
+            <ul id="notes-list" class="notes-list"></ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>QuickNotes System Design Project</p>
+        </div>
+    </footer>
+</body>
+</html>
