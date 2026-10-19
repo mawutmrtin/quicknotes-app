@@ -1,0 +1,7 @@
+# Course Reflection
+
+The most difficult concept in this course was managing high-concurrency write operations and understanding distributed transaction isolation levels under extreme load spikes. Concepts like pessimistic locking, atomic operations, and preventing race conditions during hot-key contention (such as thousands of users attempting to purchase the same seat simultaneously) were challenging to conceptualize purely in theory. I overcame this by analyzing practical database locking strategies (`SELECT FOR UPDATE`), building small stress-test prototypes, and learning how caching layers like Redis can act as a circuit breaker in front of relational databases.
+
+Based on feedback received on earlier modules, I would improve the resilience and error-handling mechanisms of my capstone's payment and hold workflow. Specifically, I would refine the asynchronous worker queue implementation for processing timed-out seat holds and adding idempotent payment retries to handle edge cases where payment gateways drop connection mid-transaction.
+
+Next, I plan to dive deeper into advanced microservice architecture, distributed database sharding strategies, and hands-on implementation of event-driven architectures using Apache Kafka and Kubernetes.
